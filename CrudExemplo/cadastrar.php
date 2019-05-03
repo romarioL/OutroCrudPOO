@@ -16,7 +16,7 @@ require_once 'classes/Usuarios.class.php';
   </head>
   <body class="bg-info">
 
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -37,37 +37,19 @@ require_once 'classes/Usuarios.class.php';
 </nav>
 
 <div class="container mt-5">
-<form action="editando.php" method="post">
+<form action="cadastrando.php" method="post">
 
-  <?php
-   $usuarios = new Usuarios();
 
-   $usuario = $usuarios->encontrar($_GET['id']);
-
-   while($line = mysqli_fetch_array($usuario)):
-
-    $id = $line['id'];
-
-    $nome = $line['nome'];
-
-    $email= $line['email'];
-    ?>
   <div class="form-group">
     <label for="exampleInputEmail1">Nome</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome" name="nome" value="<?php echo $nome; ?>">
-  </div>
-
-  <div class="form-group">
-    <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome" name="id" value="<?php echo $id; ?>">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome" name="nome">
   </div>
 
   <div class="form-group">
     <label for="exampleInputPassword1">Email</label>
-    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Digite seu email" name="email" value="<?php echo $email; ?>">
+    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Digite seu email" name="email">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-
-<?php  endwhile;?>
 </form>
 </div>
 

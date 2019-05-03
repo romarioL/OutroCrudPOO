@@ -46,7 +46,7 @@ require_once 'classes/Usuarios.class.php';
     </tr>
   </thead>
   <tbody>
-    <tr>
+    
 
     	<?php  
 
@@ -54,6 +54,7 @@ require_once 'classes/Usuarios.class.php';
     	$usuarios = new Usuarios();
 
     	$cadastrados = $usuarios->encontrarTodos();
+
 
     	while($line = mysqli_fetch_array($cadastrados)):
 
@@ -67,12 +68,15 @@ require_once 'classes/Usuarios.class.php';
 
 
     	?>
+      <tr>
       <td><?php  echo $nome?></td>
       <td><?php echo $email; ?></td>
       <td><a href="editar.php?id=<?php echo $id; ?>"  class="btn btn-primary">Editar</a><a href="excluir.php"  class="btn btn-danger ml-5">Excluir</a></td>
 
-      <?endwhile; ?>
     </tr>
+
+      <?endwhile;  ?>
+    
   </tbody>
 </table>
 
