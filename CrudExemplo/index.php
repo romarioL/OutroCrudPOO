@@ -71,7 +71,7 @@ require_once 'classes/Usuarios.class.php';
       <tr>
       <td><?php  echo $nome?></td>
       <td><?php echo $email; ?></td>
-      <td><a href="editar.php?id=<?php echo $id; ?>"  class="btn btn-primary">Editar</a><a href="excluir.php"  class="btn btn-danger ml-5">Excluir</a></td>
+      <td><a href="editar.php?id=<?php echo $id; ?>"  class="btn btn-primary">Editar</a><a href="excluir.php?id=<?php echo $id; ?>&nome=<?php echo $nome; ?>&email=<?php  echo $email; ?>"  class="btn btn-danger ml-5">Excluir</a></td>
 
     </tr>
 

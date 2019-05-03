@@ -47,9 +47,8 @@ require_once 'Conexao.class.php';
 
 		$link = $conectar->conectar();
 
-		$sql = mysqli_query( $link ,"DELETE * FROM usuarios WHERE id = '$id'");
+		$sql = mysqli_query( $link ,"DELETE  FROM usuarios WHERE id = '$id'");
 
-		return  $sql;
 	}
 
 
