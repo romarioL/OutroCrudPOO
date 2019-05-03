@@ -12,7 +12,7 @@
 
 		if(!isset($this->conexao)):
 
-		mysqli_connect($this->servidor, $this->usuario, $this->senha, $this->db);
+		$this->conexao = mysqli_connect($this->servidor, $this->usuario, $this->senha, $this->db);
 
 	    endif;
 
