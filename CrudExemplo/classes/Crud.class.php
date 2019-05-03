@@ -23,7 +23,7 @@ require_once 'Conexao.class.php';
 
 		$sql = mysqli_query($link ,"SELECT * FROM usuarios WHERE id = '$id'");
 
-		return $line = mysqli_fetch_array($sql);
+		return  $sql;
 
 	}
 
@@ -49,7 +49,7 @@ require_once 'Conexao.class.php';
 
 		$sql = mysqli_query( $link ,"DELETE * FROM usuarios WHERE id = '$id'");
 
-		return  $line = mysqli_fetch_array($sql);
+		return  $sql;
 	}
 
 
