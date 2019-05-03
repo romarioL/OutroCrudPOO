@@ -49,7 +49,7 @@ require_once 'Conexao.class.php';
 
 		$sql = mysqli_query( $link ,"DELETE * FROM usuarios WHERE id = '$id'");
 
-		return mysqli_fetch_array($sql);
+		return  $line = mysqli_fetch_array($sql);
 	}
 
 

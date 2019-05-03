@@ -35,7 +35,6 @@ class Usuarios extends Crud{
 
 		$sql = mysqli_connect($link, "INSERT INTO usuarios(nome, email)  VALUES ($this->nome, $this->email)");
 
-		return $sql;
 
 
 	
