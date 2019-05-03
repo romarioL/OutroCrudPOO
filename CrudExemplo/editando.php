@@ -14,6 +14,8 @@ $usuarios = new Usuarios();
  $usuarios->setEmail($email);
  $usuarios->atualizar($id);
 
+ header('location: index.php');
+
 
 
 
