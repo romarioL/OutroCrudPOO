@@ -69,7 +69,7 @@ require_once 'classes/Usuarios.class.php';
       <th scope="row">1</th>
       <td><?php  echo $nome?></td>
       <td><?php echo $email; ?></td>
-      <td><a href="cadastrar.php"  class="btn btn-primary">Cadastrar</a><a href="cadastrar.php"  class="btn btn-danger ml-5">Editar</a></td>
+      <td><a href="editar.php"  class="btn btn-primary">Editar</a><a href="excluir.php"  class="btn btn-danger ml-5">Excluir</a></td>
 
       <?endwhile; ?>
     </tr>
