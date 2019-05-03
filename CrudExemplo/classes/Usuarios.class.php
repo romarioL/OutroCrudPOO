@@ -47,6 +47,10 @@ class Usuarios extends Crud{
 
 		$link = $conectar->conectar();
 
+		$sql = mysqli_query($link, "UPDATE usuarios SET nome = '$this->nome', email = '$this->email' WHERE id =  '$id'");
+
+		
+
 		
 
 	}

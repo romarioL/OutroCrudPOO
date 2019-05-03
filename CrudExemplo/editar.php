@@ -36,46 +36,40 @@ require_once 'classes/Usuarios.class.php';
   </div>
 </nav>
 
+<div class="container mt-5">
+<form action="editando.php" method="post">
 
-<table class="table mt-5">
-  <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Email</th>
-      <th>Opções</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+  <?php
+   $usuarios = new Usuarios();
 
-    	<?php  
+   $usuario = $usuarios->encontrar($_GET['id']);
 
+   while($line = mysqli_fetch_array($usuario)):
 
-    	$usuarios = new Usuarios();
+    $id = $line['id'];
 
-    	$cadastrados = $usuarios->encontrarTodos();
+    $nome = $line['nome'];
 
-    	while($line = mysqli_fetch_array($cadastrados)):
+    $email= $line['email'];
+    ?>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nome</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome" name="nome" value="<?php echo $nome; ?>">
+  </div>
 
+  <div class="form-group">
+    <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome" name="id" value="<?php echo $id; ?>">
+  </div>
 
-             $id = $line['id'];
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Digite seu email" name="email" value="<?php echo $email; ?>">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 
-    		$nome = $line['nome'];
-
-    		$email = $line['email'];
-
-
-
-    	?>
-      <td><?php  echo $nome?></td>
-      <td><?php echo $email; ?></td>
-      <td><a href="editar.php?id=<?php echo $id; ?>"  class="btn btn-primary">Editar</a><a href="excluir.php"  class="btn btn-danger ml-5">Excluir</a></td>
-
-      <?endwhile; ?>
-    </tr>
-  </tbody>
-</table>
-
+<?php  endwhile;?>
+</form>
+</div>
 
 
    
