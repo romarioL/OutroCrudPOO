@@ -36,7 +36,7 @@ require_once 'Conexao.class.php';
 
 		$sql = mysqli_query( $link ,"SELECT * FROM usuarios");
 
-		return $line = mysqli_fetch_array($sql);
+		return  $sql;
 
 	}
 
